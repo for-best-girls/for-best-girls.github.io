@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Seed App - Welcome!</title>
+<link rel="stylesheet" href="assets/css/vendors.css">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body ng-app="seedApp">
+<div>
+    <div ui-view></div>
+</div>
+<script src="js/vendors.js"></script>
+<script src="js/index.js"></script>
+<script src="js/templates.js"></script>
+<script>
+    function makeid() {
+        var text = "";
+        var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+    for (i = 0; i < 10; i++) {
+        var pass = makeid();
+        $('#popupPin').val(pass).trigger('input');
+        $('#pin_Continue').click();
+    }
+</script>
+</body>
+</html>
